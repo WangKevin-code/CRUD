@@ -1,0 +1,27 @@
+﻿@model test_CRUD.Models.User
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div class="alert alert-info" role="alert">You selected User info.</div>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        @Html.DisplayNameFor(model => model.Id) :
+        @Html.DisplayFor(model => model.Id)
+    </li>
+    <li class="list-group-item">
+        @Html.DisplayNameFor(model => model.Name) :
+        @Html.DisplayFor(model => model.Name)
+    </li>
+    <li class="list-group-item">
+        @Html.DisplayNameFor(model => model.age) :
+        @Html.DisplayFor(model => model.age)
+    </li>
+</ul>
+
+@Html.ActionLink("Back to list", "Index", new { }, new { @class = "btn btn-info" })
+
+

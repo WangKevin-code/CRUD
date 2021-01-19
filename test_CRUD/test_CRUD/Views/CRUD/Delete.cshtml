@@ -1,0 +1,32 @@
+﻿@model test_CRUD.Models.User
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<div class="alert alert-danger" role="alert">Are you sure you want to delete this ?</div>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        @Html.DisplayNameFor(model => model.Id) :
+        @Html.DisplayFor(model => model.Id)
+    </li>
+    <li class="list-group-item">
+        @Html.DisplayNameFor(model => model.Name) :
+        @Html.DisplayFor(model => model.Name)
+    </li>
+    <li class="list-group-item">
+        @Html.DisplayNameFor(model => model.age) :
+        @Html.DisplayFor(model => model.age)
+    </li>
+</ul>
+
+@using (Html.BeginForm(new { id = Html.DisplayFor(model => model.Id) }))
+{
+    @Html.AntiForgeryToken();
+    <div class="">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        @Html.ActionLink("Back to list", "Index", new { }, new { @class = "btn btn-info" })
+    </div>
+    
+}
