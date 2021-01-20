@@ -57,6 +57,10 @@ namespace test_CRUD.Controllers
         public ActionResult Delete(int id)
         {
             var d_user = db.User.FirstOrDefault(a => a.Id == id);
+            if (d_user == null)
+            {
+                return HttpNotFound();
+            }
             db.User.Remove(d_user);
             db.SaveChanges();
             return RedirectToAction("Index");
