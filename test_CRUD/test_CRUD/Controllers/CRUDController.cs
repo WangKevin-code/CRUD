@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Net;
 using System.Web.Mvc;
 using System.Configuration;
 using System.Data.SqlClient;
 using test_CRUD.Models;
+
+
 namespace test_CRUD.Controllers
 {
     public class CRUDController : Controller
@@ -43,7 +46,7 @@ namespace test_CRUD.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             User user = db.User.Find(id);
             if (user == null)
@@ -70,7 +73,7 @@ namespace test_CRUD.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             User user = db.User.Find(id);
             if (user == null)
@@ -83,7 +86,7 @@ namespace test_CRUD.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             User user = db.User.Find(id);
             if (user == null)
