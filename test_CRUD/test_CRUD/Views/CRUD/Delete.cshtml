@@ -21,7 +21,7 @@
     </li>
 </ul>
 
-@using (Html.BeginForm(new { id = Html.DisplayFor(model => model.Id) }))
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken();
     <div class="">
